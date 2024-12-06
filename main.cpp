@@ -1,6 +1,16 @@
-double my_pow(double x, unsigned int power) {
-    for (int i = 1; i < power; i++) {
-        x *= x;
+﻿double my_pow(double x, int power) {
+    double result = 1;
+    if (power < 0) {
+        power = -power;
+        for (int i = 0; i < power; i++)
+            result *= x;
+        return 1 / result;
     }
-    return x;
+    else {
+        
+        for (int i = 0; i < power; i++) {
+            result *= x;
+        }
+        return result;
+    }
 }
